@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Button } from 'primereact/button'
+import '/src/scss/Login.scss'
 const Login = () => {
 	return (
 		<>
-			<div className='container'>
-				<h1>Welcome to Trip Planner App!</h1>
+			<div className='container-login'>
+				<h1 className='welcome-header'>Welcome to Trip Planner App!</h1>
 				<p className='quote'>
 					The world is a book, and those who don’t travel read only a page."
 					<p className='quote-author'>St. Augustine</p>

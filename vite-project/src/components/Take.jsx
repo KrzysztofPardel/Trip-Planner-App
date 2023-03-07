@@ -1,62 +1,88 @@
 import React, { useState, useEffect } from 'react'
-import Login from './Login'
-import { FontAwesome } from '@fortawesome/react-fontawesome'
+import '/src/scss/Take.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFile } from '@fortawesome/free-regular-svg-icons'
+import { faX } from '@fortawesome/free-solid-svg-icons'
+// import { faLaptop } from '@fortawesome/free-regular-svg-icons'
 
 export const Take = () => {
 	return (
 		<>
-			<div className='container'>
-				<p>Be responsible and take:</p>
+			<div className='container-take'>
+				<p className='top-text'>Be responsible and take:</p>
 				<div className='carousel-container'>
 					<div className='documents-container'>
-						<bottom className='documents'></bottom>
-						<span className='documents'></span>
+						<buttom className='btn-documents'>
+							<FontAwesomeIcon icon={faFile} />
+						</buttom>
+						<span className='span-documents'>Documents</span>
 					</div>
 					<div className='devices-container'>
-						<bottom className='devices'></bottom>
-						<span className='devices'></span>
+						<buttom className='btn-devices'>{/* <FontAwesomeIcon icon={faLaptop} /> */}</buttom>
+						<span className='span-devices'>Devices</span>
 					</div>
 					<div className='hygine-container'>
-						<bottom className='hygine'></bottom>
-						<span className='hygine'></span>
+						I<buttom className='btn-hygine'></buttom>
+						<span className='span-hygine'>Hygine</span>
 					</div>
 					<div className='eatables-container'>
-						<bottom className='eatables'></bottom>
-						<span className='eatables'></span>
+						I<buttom className='btn-eatables'></buttom>
+						<span className='span-eatables'>Eatables</span>
 					</div>
 					<div className='medicine-container'>
-						<bottom className='medicine'></bottom>
-						<span className='medicine'></span>
+						I<buttom className='btn-medicine'></buttom>
+						<span className='span-medicine'>Medicine</span>
 					</div>
 					<div className='can-i_container'>
-						<bottom className='can-i'></bottom>
-						<span className='can-i'></span>
-					</div>
-					<div className='medicine-container'>
-						<bottom className='medicine'></bottom>
-						<span className='medicine'></span>
+						I<buttom className='btn-can-i'></buttom>
+						<span className='span-can-i'>Can I take?</span>
 					</div>
 					<div className='others-container'>
-						<bottom className='fa-regular fa-file'>{/* <FontAwesomeIcon icon='fa-regular fa-file' /> */}</bottom>
-						<span className='others'></span>
+						I<buttom className='btn-others'></buttom>
+						<span className='span-others'>Others</span>
 					</div>
 				</div>
-				<div className='take-container'>
-					<p className='take'>Take</p>
+				<div className='list-container'>
+					<h2 className='header_take'>Take</h2>
 					<div className='line'></div>
 					{/* //po takich li będzie mapowane */}
-					<ul className='to-take_list'>
+					<ul className='list-to_take'>
 						<li className='element'>
-							<label className='checkbox' />
-							<input className='checkbox' type='checkbox' />
-							<input className='to-take' type='text' />
-							<button className='edit'>E</button>
-							<button className='delete'>D</button>
+							<label className='checkbox-label' />
+							<input className='checkbox-input' type='checkbox' />
+							<input className='input-to_take' type='text' />
+							<button className='btn-edit'>
+								<FontAwesomeIcon icon={faFile} />
+							</button>
+							<button className='btn-delete'>
+								<FontAwesomeIcon icon={faX} />
+							</button>
+						</li>
+						<li className='element'>
+							<label className='checkbox-label' />
+							<input className='checkbox-input' type='checkbox' />
+							<input className='input-to_take' type='text' />
+							<button className='btn-edit'>
+								<FontAwesomeIcon icon={faFile} />
+							</button>
+							<button className='btn-delete'>
+								<FontAwesomeIcon icon={faX} />
+							</button>
+						</li>
+						<li className='element'>
+							<label className='checkbox-label' />
+							<input className='checkbox-input' type='checkbox' />
+							<input className='input-to_take' type='text' />
+							<button className='btn-edit'>
+								<FontAwesomeIcon icon={faFile} />
+							</button>
+							<button className='btn-delete'>
+								<FontAwesomeIcon icon={faX} />
+							</button>
 						</li>
 					</ul>
-					<p className='bottom-text'>So what do you want to take to $trip - destination.value on $trip - date.value?</p>
 				</div>
+				<p className='bottom-text'>So what do you want to take to $trip - destination.value on $trip - date.value?</p>
 			</div>
 		</>
 	)
