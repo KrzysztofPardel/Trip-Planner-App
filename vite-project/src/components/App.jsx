@@ -6,9 +6,9 @@ import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 // import reactLogo from './assets/react.svg'
 
 import Login from '/src/components/Login.jsx'
-import { Take } from '/src/components/Take.jsx'
-import { Expanses } from '/src/components/Expanses.jsx'
-import { Weather } from '/src/components/Weather.jsx'
+import Take from '/src/components/Take.jsx'
+import Expanses from '/src/components/Expanses.jsx'
+import Weather from '/src/components/Weather.jsx'
 
 const App = () => {
 	return (

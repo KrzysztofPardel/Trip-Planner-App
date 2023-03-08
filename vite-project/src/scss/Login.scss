@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -10,17 +12,52 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	background-color: $color-secondary;
+	background-image: url(../assets/golden.jpg);
+	background-position: center;
+	background-size: cover;
+
 	// border: 2px dashed red;
 }
-.welcome-header {
-	text-align: center;
+.welcome-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: -3em;
+	.welcome-top {
+		font-family: $font-secondary;
+		margin-bottom: -2em;
+	}
+	.welcome-middle {
+		text-align: center;
+		width: 15em;
+		font-family: $font-main;
+		font-size: 2em;
+		color: $color-primary;
+		background: $color-quartenary;
+		margin-bottom: 1em;
+		position: relative;
+		top: 1em;
+	}
+	.welcome-bottom {
+		font-family: $font-secondary;
+		font-size: $font-secondary-size;
+		// background: $color-quartenary;
+	}
 }
+
 .quote {
 	margin: 2em;
 	text-align: center;
-	margin-bottom: 3em;
+	margin-bottom: 1em;
+	font-family: $font-secondary;
+	font-size: $font-primary-size;
+	background: $color-quartenary;
+	text-decoration: underline;
+	width: 80vw;
 	.quote-author {
-		margin-top: 0.5em;
+		margin-top: 1em;
 		text-align: center;
 	}
 }
@@ -39,14 +76,34 @@
 	.trip-date,
 	.trip-destination {
 		font-size: 1em;
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: $font-main;
 		border: none;
 		border-bottom: 1px solid;
 		padding: 0.5em;
 		&:focus {
-			background-color: cornflowerblue;
+			background-color: $color-secondary;
+			font-weight: 600;
 		}
 	}
+	& .button-container {
+		display: flex;
+		justify-content: center;
+		& .submit {
+			font-size: $font-secondary-size;
+			font-family: $font-main;
+			background-color: $color-primary;
+			color: $color-quartenary;
+			width: 6em;
+			padding: 0.5em;
+			border-radius: 5em;
+			text-align: center;
+			text-decoration: none;
+		}
+	}
+}
+.background {
+	opacity: 0.5;
+	z-index: 1;
 }
 
 @import './variables.scss';

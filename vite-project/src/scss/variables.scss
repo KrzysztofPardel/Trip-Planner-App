@@ -1,9 +1,20 @@
-// $font-main:
-// $font-secondary:
-// $font-teritary:
-// $font-primary-size:
-// $font-secondary-size:
-// $font-teritary-size:
-//color-primary:
-//color-secondary:
-//color-teritary:
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fira+Sans+Extra+Condensed:ital,wght@0,200;0,300;0,700;0,800;1,200;1,500&family=Indie+Flower&family=Pacifico&display=swap');
+
+@import './Take.scss';
+@import './Expanses.scss';
+@import './Weather.scss';
+
+$font-main: 'Fira Sans Extra Condensed', sans-serif;
+$font-secondary: 'Architects Daughter', cursive;
+$font-teritary: 'Indie Flower', cursive;
+$font-primary-size: 1.3 em;
+$font-secondary-size: 1em;
+$font-teritary-size: 3em;
+$color-primary: #060927;
+$color-secondary: #faedcd;
+$color-teritary: #b12f3c;
+$color-quartenary: #ffffff;
+
+// font-family: 'Fira Sans Extra Condensed', sans-serif;
+// font-family: 'Indie Flower', cursive;
+// font-family: 'Pacifico', cursive;
