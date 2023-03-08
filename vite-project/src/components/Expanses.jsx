@@ -16,7 +16,7 @@ export const Expanses = () => {
 		<>
 			<div className='container-expanses'>
 				<p className='top-text'>Be responsible and buy:</p>
-				<div className='carousel-container'>
+				<div className='carousel-container_expanses'>
 					<div className='housing-container'>
 						<buttom className='btn-housing'>
 							<FontAwesomeIcon icon={faHouse} />
@@ -61,14 +61,14 @@ export const Expanses = () => {
 					</div>
 				</div>
 				<div className='list-container'>
-					<h2 className='header_take'>Buy</h2>
+					<h2 className='header_expanses'>Buy</h2>
 					<div className='line'></div>
 					{/* //po takich li będzie mapowane */}
 					<ul className='list-to_take'>
 						<li className='element'>
 							<label className='checkbox-label' />
 							<input className='checkbox-input' type='checkbox' />
-							<input className='input-to_take' type='text' />
+							<input className='input-to_expanses' type='text' />
 							<button className='btn-edit'>
 								<FontAwesomeIcon icon={faFile} />
 							</button>
@@ -79,7 +79,7 @@ export const Expanses = () => {
 						<li className='element'>
 							<label className='checkbox-label' />
 							<input className='checkbox-input' type='checkbox' />
-							<input className='input-to_take' type='text' />
+							<input className='input-to_expanses' type='text' />
 							<button className='btn-edit'>
 								<FontAwesomeIcon icon={faFile} />
 							</button>
@@ -90,7 +90,7 @@ export const Expanses = () => {
 						<li className='element'>
 							<label className='checkbox-label' />
 							<input className='checkbox-input' type='checkbox' />
-							<input className='input-to_take' type='text' />
+							<input className='input-to_expanses' type='text' />
 							<button className='btn-edit'>
 								<FontAwesomeIcon icon={faFile} />
 							</button>

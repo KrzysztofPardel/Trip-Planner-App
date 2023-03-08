@@ -1,3 +1,4 @@
+@import './variables.scss';
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -11,8 +12,13 @@
 	// justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
+	background-color: $color-secondary;
+	background-image: url(../assets/pexels-2.jpg);
+	background-position: center;
+	background-size: cover;
 	.top-text {
-		font-size: 1.2em;
+		font-size: 1.8em;
+		font-weight: 600;
 		margin-bottom: 5em;
 		margin-top: 2em;
 		text-align: center;
@@ -22,36 +28,69 @@
 		justify-content: center;
 		border: none;
 		border-bottom: 1px solid;
+		border-radius: 1em;
+		padding: 0.3em;
 		font-size: 4em;
 		text-align: center;
-		width: 2em;
+		width: 4em;
 	}
 	.bottom-text {
-		font-size: 1.2em;
+		font-weight: 600;
+		font-size: 1.8em;
 		margin-top: 5em;
 	}
 }
-.buttons-container {
+.btn-container_top {
 	width: 90vw;
 	height: 10vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: $color-primary;
 	// border: 1px dashed navy;
 	gap: 0.5em;
 	margin-top: 0.5em;
 	margin-bottom: 1em;
-	.housing-container,
-	.transport-container {
+	.day-container,
+	.btn-go_to_expanses,
+	.week-container {
 		width: 5em;
 		height: 5em;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		border: 1px solid navy;
-		padding: 0.5em;
+		// border: 1px solid navy;
 		height: 4.5em;
 		border-radius: 50%;
+		.btn-day,
+		.btn-week {
+			font-size: 3em;
+			:active {
+				font-size: 2.1em;
+				color: $color-teritary;
+			}
+		}
+	}
+}
+.btn-container_bottom {
+	width: 100vw;
+	display: flex;
+	justify-content: space-around;
+	text-transform: uppercase;
+	margin-top: -5em;
+	margin-bottom: 1.5em;
+	.btn-go_to_login,
+	.btn-go_to_expanses,
+	.btn-go_to_take {
+		text-decoration: none;
+		font-size: $font-secondary-size;
+		font-family: $font-main;
+		background-color: $color-primary;
+		color: $color-quartenary;
+		width: 6em;
+		padding: 0.5em;
+		border-radius: 5em;
+		text-align: center;
 	}
 }

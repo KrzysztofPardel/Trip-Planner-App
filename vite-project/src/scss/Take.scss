@@ -32,6 +32,7 @@
 	gap: 3em;
 	margin-top: 0.5em;
 	margin-bottom: 3em;
+	// background-color: $color-quartenary;
 	.documents-container,
 	.devices-container,
 	.hygine-container,
@@ -64,6 +65,7 @@
 		background: none;
 		padding: 0.2em;
 		border: 1em;
+		color: $color-primary;
 
 		:active {
 			font-size: 2.1em;
@@ -97,7 +99,7 @@
 	.header_take {
 		font-family: $font-teritary;
 		font-size: $font-teritary-size;
-		text-transform: lowercase;
+		color: $color-teritary;
 		margin-bottom: -0.2em;
 	}
 	.line {
@@ -118,7 +120,15 @@
 			.input-to_take {
 				border: none;
 				border-bottom: 1px solid;
-				width: 20em;
+				width: 11em;
+				font-family: $font-main;
+				font-size: $font-primary-size;
+				&:focus {
+					background-color: $color-secondary;
+					font-weight: 400;
+					border: 1px solid $color-secondary !important;
+					border: none;
+				}
 			}
 			.btn-edit,
 			.btn-delete {

@@ -19,8 +19,10 @@
 	text-align: center;
 	font-family: $font-main;
 	font-size: $font-primary-size;
+	border-bottom: 1px solid $color-primary;
 }
-.carousel-container {
+
+.carousel-container_expanses {
 	width: 90vw;
 	height: 10vh;
 	display: flex;
@@ -62,6 +64,7 @@
 		background: none;
 		padding: 0.2em;
 		border: 1em;
+		color: $color-primary;
 
 		:active {
 			font-size: 2.1em;
@@ -89,8 +92,11 @@
 	// border: 1px solid navy;
 	padding: 0.5em;
 	width: auto;
-	.header_take {
-		font-size: 3em;
+	.header_expanses {
+		font-family: $font-teritary;
+		font-size: $font-teritary-size;
+		color: $color-teritary;
+		margin-bottom: -0.2em;
 	}
 	.line {
 		border-bottom: 2px solid black;
@@ -110,13 +116,18 @@
 			.checkbox-input {
 				margin-right: 1em;
 			}
-			.input-to_take {
+			.input-to_expanses {
 				border: none;
 				border-bottom: 1px solid;
-				width: 10em;
+				width: 11em;
 				font-family: $font-main;
 				font-size: $font-primary-size;
 				// margin: 1em 0;
+				&:focus {
+					background-color: $color-secondary;
+					font-weight: 400;
+					border: 1px solid $color-secondary !important;
+				}
 			}
 			.btn-edit,
 			.btn-delete {
@@ -137,17 +148,7 @@
 	margin-top: -30em;
 	margin-bottom: 1.5em;
 
-	.btn-go_to_take {
-		text-decoration: none;
-		font-size: $font-secondary-size;
-		font-family: $font-main;
-		background-color: $color-primary;
-		color: $color-quartenary;
-		width: 6em;
-		padding: 0.5em;
-		border-radius: 5em;
-		text-align: center;
-	}
+	.btn-go_to_take,
 	.btn-go_to_weather {
 		text-decoration: none;
 		font-size: $font-secondary-size;
