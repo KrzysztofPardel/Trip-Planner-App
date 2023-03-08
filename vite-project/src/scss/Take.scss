@@ -1,3 +1,4 @@
+@import './variables.scss';
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -12,26 +13,29 @@
 	// justify-content: space-between;
 	// align-items: center;
 	flex-direction: column;
+	background-color: $color-secondary;
+	.top-text {
+		text-align: center;
+		font-family: $font-main;
+		font-size: $font-primary-size;
+		// border: 1px solid red;
+	}
 }
-.top-text {
-	text-align: center;
-	font-size: 1.2em;
-	border: 1px solid red;
-}
-.carousel-container {
+
+.carousel-container_take {
 	width: 90vw;
 	height: 10vh;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	border: 1px dashed navy;
-	gap: 0.5em;
+	// align-items: center;
+	// border: 1px dashed navy;
+	gap: 3em;
 	margin-top: 0.5em;
-	margin-bottom: 1em;
+	margin-bottom: 3em;
 	.documents-container,
 	.devices-container,
 	.hygine-container,
-	.eatables-container,
+	.food-container,
 	.medicine-container,
 	.can-i_container,
 	.others-container {
@@ -40,11 +44,42 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		border: 1px solid navy;
+		justify-content: center;
+		// border: 1px solid navy;
 		padding: 0.5em;
 		height: 4.5em;
-		border-radius: 50%;
-		font-size: 1em;
+		font-size: $font-icons-size;
+		font-family: $font-secondary;
+	}
+	.btn-documents,
+	.btn-devices,
+	.btn-hygine,
+	.btn-food,
+	.btn-medicine,
+	.btn-can-i,
+	.btn-others {
+		border: 1px solid navy;
+		border-radius: 2em;
+		font-size: 2em;
+		background: none;
+		padding: 0.2em;
+		border: 1em;
+
+		:active {
+			font-size: 2.1em;
+			color: $color-teritary;
+		}
+	}
+	.span-documents,
+	.span-devices,
+	.span-hygine,
+	.span-food,
+	.span-medicine,
+	.span-can-i,
+	.span-other {
+		font-size: $font-icons-size;
+		font-weight: 400;
+		font-size: $font-primary-size;
 	}
 }
 
@@ -52,12 +87,18 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	margin-bottom: 32em;
-	// border: 1px solid navy;
-	padding: 0.5em;
-	width: auto;
+	border: 0.5px solid navy;
+	width: 100vw;
+	height: 35em;
+	background-color: $color-quartenary;
+	border-radius: 1em;
+	padding: 0.1em;
+
 	.header_take {
-		font-size: 3em;
+		font-family: $font-teritary;
+		font-size: $font-teritary-size;
+		text-transform: lowercase;
+		margin-bottom: -0.2em;
 	}
 	.line {
 		border-bottom: 2px solid black;
@@ -66,9 +107,11 @@
 		// border: 3px solid red;
 	}
 	.list-to_take {
+		height: 30em;
 		.element {
 			display: flex;
 			justify-content: space-around;
+			line-height: 1em;
 			.checkbox-input {
 				margin-right: 1em;
 			}
@@ -79,6 +122,7 @@
 			}
 			.btn-edit,
 			.btn-delete {
+				font-size: 0.8em;
 				margin-left: 1em;
 				border: none;
 				background: none;
@@ -86,7 +130,39 @@
 		}
 	}
 }
+.btn-container {
+	display: flex;
+	justify-content: space-between;
+
+	text-transform: uppercase;
+	margin-top: -30em;
+	margin-bottom: 1.5em;
+
+	.btn-go_to_login {
+		text-decoration: none;
+		font-size: $font-secondary-size;
+		font-family: $font-main;
+		background-color: $color-primary;
+		color: $color-quartenary;
+		width: 6em;
+		padding: 0.5em;
+		border-radius: 5em;
+		text-align: center;
+	}
+	.btn-go_to_expanses {
+		text-decoration: none;
+		font-size: $font-secondary-size;
+		font-family: $font-main;
+		background-color: $color-primary;
+		color: $color-quartenary;
+		width: 6em;
+		padding: 0.5em;
+		border-radius: 5em;
+		text-align: center;
+	}
+}
 .bottom-text {
 	text-align: center;
 	width: 85vw;
+	font-family: $font-main;
 }

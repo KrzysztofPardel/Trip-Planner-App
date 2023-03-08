@@ -3,43 +3,60 @@ import '/src/scss/Take.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFile } from '@fortawesome/free-regular-svg-icons'
 import { faX } from '@fortawesome/free-solid-svg-icons'
-// import { faLaptop } from '@fortawesome/free-regular-svg-icons'
+import { faLaptop } from '@fortawesome/free-solid-svg-icons'
+import { faSoap } from '@fortawesome/free-solid-svg-icons'
+import { faUtensils } from '@fortawesome/free-solid-svg-icons'
+import { faPills } from '@fortawesome/free-solid-svg-icons'
+import { faQuestion } from '@fortawesome/free-solid-svg-icons'
+import { faGuitar } from '@fortawesome/free-solid-svg-icons'
 
 export const Take = () => {
 	return (
 		<>
 			<div className='container-take'>
 				<p className='top-text'>Be responsible and take:</p>
-				<div className='carousel-container'>
+				<div className='carousel-container_take'>
 					<div className='documents-container'>
-						<buttom className='btn-documents'>
+						<button className='btn-documents'>
 							<FontAwesomeIcon icon={faFile} />
-						</buttom>
+						</button>
 						<span className='span-documents'>Documents</span>
 					</div>
 					<div className='devices-container'>
-						<buttom className='btn-devices'>{/* <FontAwesomeIcon icon={faLaptop} /> */}</buttom>
+						<button className='btn-devices'>
+							<FontAwesomeIcon icon={faLaptop} />
+						</button>
 						<span className='span-devices'>Devices</span>
 					</div>
 					<div className='hygine-container'>
-						I<buttom className='btn-hygine'></buttom>
+						<button className='btn-hygine'>
+							<FontAwesomeIcon icon={faSoap} />
+						</button>
 						<span className='span-hygine'>Hygine</span>
 					</div>
-					<div className='eatables-container'>
-						I<buttom className='btn-eatables'></buttom>
-						<span className='span-eatables'>Eatables</span>
+					<div className='food-container'>
+						<button className='btn-food'>
+							<FontAwesomeIcon icon={faUtensils} />
+						</button>
+						<span className='span-food'>Eatables</span>
 					</div>
 					<div className='medicine-container'>
-						I<buttom className='btn-medicine'></buttom>
+						<button className='btn-medicine'>
+							<FontAwesomeIcon icon={faPills} />
+						</button>
 						<span className='span-medicine'>Medicine</span>
 					</div>
 					<div className='can-i_container'>
-						I<buttom className='btn-can-i'></buttom>
-						<span className='span-can-i'>Can I take?</span>
+						<button className='btn-can-i'>
+							<FontAwesomeIcon icon={faQuestion} />
+						</button>
+						<span className='span-can-i'>Can I?</span>
 					</div>
 					<div className='others-container'>
-						I<buttom className='btn-others'></buttom>
-						<span className='span-others'>Others</span>
+						<button className='btn-others'>
+							<FontAwesomeIcon icon={faGuitar} />
+						</button>
+						<span className='span-other'>Others</span>
 					</div>
 				</div>
 				<div className='list-container'>
@@ -81,6 +98,14 @@ export const Take = () => {
 							</button>
 						</li>
 					</ul>
+				</div>
+				<div className='btn-container'>
+					<a href='http://localhost:5173/' className='btn-go_to_login'>
+						Go back
+					</a>
+					<a href='http://localhost:5173/expanses' className='btn-go_to_expanses'>
+						Expanes
+					</a>
 				</div>
 				<p className='bottom-text'>So what do you want to take to $trip - destination.value on $trip - date.value?</p>
 			</div>
