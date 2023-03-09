@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import '/src/scss/Login.scss'
 import globe from './globe.json'
 import backpack from './backpack.json'
@@ -26,9 +27,9 @@ const Login = () => {
 					<input className='trip-date' type='date' placeholder='When are you planning to travel?'></input>
 					<input className='trip-destination' type='text' placeholder='What is your trip destination?'></input>
 					<div className='button-container'>
-						<a href='http://localhost:5173/take' className='submit'>
+						<Link to='/take' className='submit'>
 							Ok, let's go!
-						</a>
+						</Link>
 					</div>
 				</div>
 				<p className='quote'>

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { Carousel } from 'primereact/carousel'
 import '/src/scss/Take.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFile } from '@fortawesome/free-regular-svg-icons'
@@ -100,12 +102,12 @@ export const Take = () => {
 					</ul>
 				</div>
 				<div className='btn-container'>
-					<a href='http://localhost:5173/' className='btn-go_to_login'>
+					<Link to='/' className='btn-go_to_login'>
 						Go back
-					</a>
-					<a href='http://localhost:5173/expanses' className='btn-go_to_expanses'>
+					</Link>
+					<Link to='/expanses' className='btn-go_to_expanses'>
 						Expanes
-					</a>
+					</Link>
 				</div>
 				<p className='bottom-text'>So what do you want to take to $trip - destination.value on $trip - date.value?</p>
 			</div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import '/src/scss/Weather.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun } from '@fortawesome/free-regular-svg-icons'
@@ -26,15 +27,15 @@ export const Weather = () => {
 				<p className='bottom-text'>on the day of your arrival!</p>
 			</div>
 			<div className='btn-container_bottom'>
-				<a href='http://localhost:5173/' className='btn-go_to_login'>
+				<Link to='/' className='btn-go_to_login'>
 					Login
-				</a>
-				<a href='http://localhost:5173/expanses' className='btn-go_to_expanses'>
+				</Link>
+				<Link to='/expanses' className='btn-go_to_expanses'>
 					Expanses
-				</a>
-				<a href='http://localhost:5173/take' className='btn-go_to_take'>
+				</Link>
+				<Link to='/take' className='btn-go_to_take'>
 					Take
-				</a>
+				</Link>
 			</div>
 		</>
 	)

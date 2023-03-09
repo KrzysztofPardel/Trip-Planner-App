@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import '/src/scss/Expanses.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFile } from '@fortawesome/free-regular-svg-icons'
@@ -101,12 +102,12 @@ export const Expanses = () => {
 					</ul>
 				</div>
 				<div className='btn-container'>
-					<a href='http://localhost:5173/take' className='btn-go_to_take'>
+					<Link to='/take' className='btn-go_to_take'>
 						Take
-					</a>
-					<a href='http://localhost:5173/weather' className='btn-go_to_weather'>
+					</Link>
+					<Link to='/weather' className='btn-go_to_weather'>
 						Weather
-					</a>
+					</Link>
 				</div>
 				<p className='bottom-text'>
 					So what do you want to buy when at the trip to $trip - destination.value on $trip - date.value?

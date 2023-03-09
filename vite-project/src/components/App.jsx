@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React, { Component } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 // import './scss/App.scss'
 // import reactLogo from './assets/react.svg'
 
