@@ -1,4 +1,5 @@
 @import './variables.scss';
+// @import './mixins.sass';
 
 * {
 	box-sizing: border-box;
@@ -12,7 +13,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background-color: $color-secondary;
+	// background-color: $color-secondary;
 	background-image: url(../assets/golden.jpg);
 	background-position: center;
 	background-size: cover;
@@ -24,15 +25,16 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	margin-bottom: -5em;
+	margin-bottom: -3em;
+	position: absolute;
+	top: 1em;
 	.welcome-top {
 		font-family: $font-secondary;
 		margin-bottom: -2em;
-		margin-top: 2em;
 	}
 	.welcome-middle {
 		text-align: center;
-		width: 15em;
+		width: 100vw;
 		font-family: $font-main;
 		font-size: 2em;
 		color: $color-primary;
@@ -42,24 +44,26 @@
 		top: 1em;
 	}
 	.welcome-bottom {
+		margin-bottom: -2em;
 		font-family: $font-secondary;
 		font-size: $font-secondary-size;
-		// background: $color-quartenary;
+	}
+	@include tablet {
+		font-size: 1.5em;
 	}
 }
-
-.quote {
-	margin: 2em;
-	text-align: center;
-	margin-bottom: 1em;
-	font-family: $font-secondary;
-	font-size: $font-primary-size;
-	background: $color-quartenary;
-	text-decoration: underline;
-	width: 80vw;
-	.quote-author {
-		margin-top: 1em;
-		text-align: center;
+.animation-backpack {
+	height: auto;
+	width: auto;
+	position: absolute;
+	top: 4em;
+	@include mobile_mini {
+		height: 50vh;
+		width: 50vh;
+	}
+	@include tablet {
+		height: 55vh;
+		width: 55vh;
 	}
 }
 
@@ -70,7 +74,10 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 3em;
+	padding: 2em;
+	position: absolute;
+	top: 30em;
+	margin-bottom: 0.5em;
 	gap: 1em;
 	background-color: white;
 	& .name,
@@ -100,12 +107,33 @@
 			border-radius: 5em;
 			text-align: center;
 			text-decoration: none;
+			@include tablet {
+				width: 10em;
+				padding: 1em;
+			}
 		}
 	}
+	@include tablet {
+		width: 30em;
+		padding: 2em;
+	}
 }
-.background {
-	opacity: 0.5;
-	z-index: 1;
+.quote {
+	text-align: center;
+	font-family: $font-secondary;
+	font-size: $font-secondary-size;
+	background: $color-quartenary;
+	text-decoration: underline;
+	width: 80vw;
+	position: absolute;
+	top: 48.5em;
+	.quote-author {
+		font-size: 0.7em;
+		// margin-top: 1em;
+		text-align: center;
+	}
+	@include tablet {
+		top: 40em;
+		font-size: 1.2em;
+	}
 }
-
-@import './variables.scss';
