@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { createSearchParams, Link, useNavigate } from 'react-router-dom'
 import '/src/scss/Login.scss'
 import globe from './globe.json'
 import backpack from './backpack.json'
 import Lottie from 'lottie-react'
 const backpackStyle = {
-	// height: '70vh',
-	// width: '50vw',
 	margin: '2em',
-	// padding: '-1em',
 }
 const Login = () => {
+	const [name, setName] = useState('')
+	const [date, setDate] = useState('')
+	const [destination, setDestination] = useState('')
+
 	return (
 		<>
 			<div className='container-login'>
@@ -23,11 +24,26 @@ const Login = () => {
 					<Lottie animationData={backpack} style={backpackStyle} />
 				</div>
 				<div className='box'>
-					<input className='name' type='text' placeholder='What is your name?'></input>
-					<input className='trip-date' type='date' placeholder='When are you planning to travel?'></input>
-					<input className='trip-destination' type='text' placeholder='What is your trip destination?'></input>
+					<input
+						className='name'
+						type='text'
+						value={name}
+						onChange={e => setName(e.target.value)}
+						placeholder='What is your name?'></input>
+					<input
+						className='trip-date'
+						type='date'
+						value={date}
+						onChange={e => setDate(e.target.value)}
+						placeholder='When are you planning to travel?'></input>
+					<input
+						className='trip-destination'
+						type='text'
+						value={destination}
+						onChange={e => setDestination(e.target.value)}
+						placeholder='What is your trip destination?'></input>
 					<div className='button-container'>
-						<Link to='/take' className='submit'>
+						<Link to='/take' className='btn-lets_go'>
 							Ok, let's go!
 						</Link>
 					</div>

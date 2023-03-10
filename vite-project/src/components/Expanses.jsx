@@ -11,62 +11,106 @@ import { faTrophy } from '@fortawesome/free-solid-svg-icons'
 import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons'
 import { faUserNurse } from '@fortawesome/free-solid-svg-icons'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-
+import { v4 as uuidv4 } from 'uuid'
+const object = {
+	id: 1,
+	product: 'another item to buy',
+	done: false,
+}
 export const Expanses = () => {
+	const [todo, setTodo] = useState([object])
+	const [product, setProduct] = useState('')
+	const handleAdd = event => {
+		event.preventDefault()
+		const newToDo = todo.concat({ product, id: uuidv4() })
+		setTodo(newToDo)
+		setProduct('')
+	}
+
 	return (
 		<>
 			<div className='container-expanses'>
 				<p className='top-text'>Be responsible and buy:</p>
 				<div className='carousel-container_expanses'>
 					<div className='housing-container'>
-						<buttom className='btn-housing'>
+						<button className='btn-housing'>
 							<FontAwesomeIcon icon={faHouse} />
-						</buttom>
+						</button>
 						<span className='span-housing'>Housing</span>
 					</div>
 					<div className='transport-container'>
-						<buttom className='btn-transport'>
+						<button className='btn-transport'>
 							<FontAwesomeIcon icon={faBus} />
-						</buttom>
+						</button>
 						<span className='span-transport'>Transport</span>
 					</div>
 					<div className='eatables-container'>
-						<buttom className='btn-eatables'>
+						<button className='btn-eatables'>
 							<FontAwesomeIcon icon={faUtensils} />
-						</buttom>
+						</button>
 						<span className='span-eatables'>Eatables</span>
 					</div>
 					<div className='entertainment-container'>
-						<buttom className='btn-entertainment'>
+						<button className='btn-entertainment'>
 							<FontAwesomeIcon icon={faTrophy} />
-						</buttom>
+						</button>
 						<span className='span-entertainment'>Entertainment</span>
 					</div>
 					<div className='souvenirs-container'>
-						<buttom className='btn-souvenirs'>
+						<button className='btn-souvenirs'>
 							<FontAwesomeIcon icon={faGlobeEurope} />
-						</buttom>
+						</button>
 						<span className='span-souvenirs'>Souvenirs</span>
 					</div>
 					<div className='health_container'>
-						<buttom className='btn-health'>
+						<button className='btn-health'>
 							<FontAwesomeIcon icon={faUserNurse} />
-						</buttom>
+						</button>
 						<span className='span-health'>Health</span>
 					</div>
 					<div className='others-container'>
-						<buttom className='btn-others'>
+						<button className='btn-others'>
 							<FontAwesomeIcon icon={faPaperPlane} />
-						</buttom>
+						</button>
 						<span className='span-others'>Others</span>
 					</div>
 				</div>
 				<div className='list-container'>
-					<h2 className='header_expanses'>Buy</h2>
-					<div className='line'></div>
+					<div className='container-take_box'>
+						<div className='container-take_header'>
+							<h2 className='header_expanses'>Buy</h2>
+							<div className='line'></div>
+						</div>
+						<div className='container-expanses_input'>
+							<input
+								type='text'
+								placeholder='ex. Passport'
+								value={product}
+								onChange={e => setProduct(e.target.value)}
+								className='input-add_take'></input>
+							<button onClick={handleAdd} className='btn-add_take'>
+								Add it!
+							</button>
+						</div>
+					</div>
+
 					{/* //po takich li będzie mapowane */}
 					<ul className='list-to_take'>
-						<li className='element'>
+						{todo.map(element => (
+							<li key={element.id} className='element'>
+								<label className='checkbox-label' />
+								<input className='checkbox-input' type='checkbox' />
+								{element.product}
+								{/* <input className='input-to_take' type='text' /> */}
+								<button className='btn-edit'>
+									<FontAwesomeIcon icon={faFile} />
+								</button>
+								<button className='btn-delete'>
+									<FontAwesomeIcon icon={faX} />
+								</button>
+							</li>
+						))}
+						{/* <li className='element'>
 							<label className='checkbox-label' />
 							<input className='checkbox-input' type='checkbox' />
 							<input className='input-to_expanses' type='text' />
@@ -76,29 +120,7 @@ export const Expanses = () => {
 							<button className='btn-delete'>
 								<FontAwesomeIcon icon={faX} />
 							</button>
-						</li>
-						<li className='element'>
-							<label className='checkbox-label' />
-							<input className='checkbox-input' type='checkbox' />
-							<input className='input-to_expanses' type='text' />
-							<button className='btn-edit'>
-								<FontAwesomeIcon icon={faFile} />
-							</button>
-							<button className='btn-delete'>
-								<FontAwesomeIcon icon={faX} />
-							</button>
-						</li>
-						<li className='element'>
-							<label className='checkbox-label' />
-							<input className='checkbox-input' type='checkbox' />
-							<input className='input-to_expanses' type='text' />
-							<button className='btn-edit'>
-								<FontAwesomeIcon icon={faFile} />
-							</button>
-							<button className='btn-delete'>
-								<FontAwesomeIcon icon={faX} />
-							</button>
-						</li>
+						</li> */}
 					</ul>
 				</div>
 				<div className='btn-container'>

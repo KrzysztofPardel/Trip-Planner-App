@@ -10,15 +10,15 @@ export const Weather = () => {
 			<div className='container-weather'>
 				<div className='btn-container_top'>
 					<div className='day-container'>
-						<buttom className='btn-day'>
+						<button className='btn-day'>
 							<FontAwesomeIcon icon={faSun} />
-						</buttom>
+						</button>
 						<span className='span-day'>Day</span>
 					</div>
 					<div className='week-container'>
-						<buttom className='btn-week'>
+						<button className='btn-week'>
 							<FontAwesomeIcon icon={faCalendarPlus} />
-						</buttom>
+						</button>
 						<span className='span-week'>Week</span>
 					</div>
 				</div>

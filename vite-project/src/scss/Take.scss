@@ -10,6 +10,8 @@
 	height: 100vh;
 	padding: 2em;
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	// justify-content: space-between;
 	// align-items: center;
 	flex-direction: column;
@@ -107,6 +109,11 @@
 		// height: 60vh;
 		// padding: 1em;
 	}
+	.container-take_box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
 	.header_take {
 		font-family: $font-teritary;
@@ -121,14 +128,16 @@
 		// border: 3px solid red;
 	}
 	.list-to_take {
-		height: 30em;
+		height: 40em;
+		width: 80vw;
 		padding: 1em;
 		@include tablet {
 			padding: 1em;
 		}
 		.element {
 			display: flex;
-			justify-content: space-around;
+			align-items: center;
+			justify-content: flex-start;
 			line-height: 1em;
 			.checkbox-input {
 				margin-right: 1em;
@@ -153,7 +162,7 @@
 			.btn-edit,
 			.btn-delete {
 				font-size: 0.8em;
-				margin-left: 1em;
+				// margin-left: 1em;
 				border: none;
 				background: none;
 				height: 2em;
@@ -163,7 +172,7 @@
 			}
 			@include tablet {
 				width: auto;
-				padding: 0em;
+				justify-content: flex-start;
 			}
 		}
 	}

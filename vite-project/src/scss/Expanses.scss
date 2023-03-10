@@ -10,8 +10,9 @@
 	height: 100vh;
 	padding: 2em;
 	display: flex;
-	// justify-content: space-between;
-	// align-items: center;
+	justify-content: space-between;
+	align-items: center;
+	// gap: 1em;
 	flex-direction: column;
 	background-color: $color-secondary;
 }
@@ -92,7 +93,7 @@
 	margin-bottom: 32em;
 	// border: 1px solid navy;
 	padding: 0.5em;
-	width: auto;
+	width: 70vw;
 	.header_expanses {
 		font-family: $font-teritary;
 		font-size: $font-teritary-size;
@@ -102,17 +103,20 @@
 	.line {
 		border-bottom: 2px solid black;
 		width: 10em;
-		margin-bottom: 2em;
+		// margin-bottom: 2em;
 		// border: 3px solid red;
 	}
 	.list-to_take {
-		// display: flex;
-		// flex-direction: column;
-		// align-items: center;
-		// justify-content: center;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		overflow-y: scroll;
+		border: 2px 0 solid black;
+		max-width: 30em;
+		max-height: 40vh;
 		.element {
 			display: flex;
-			justify-content: space-around;
+			justify-content: space-start;
 			margin: 1em 0;
 			.checkbox-input {
 				margin-right: 1em;
@@ -151,6 +155,7 @@
 	text-transform: uppercase;
 	margin-top: -30em;
 	margin-bottom: 1.5em;
+	gap: 2.5vw;
 
 	.btn-go_to_take,
 	.btn-go_to_weather {

@@ -4,23 +4,28 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 // import './scss/App.scss'
 // import reactLogo from './assets/react.svg'
-
 import Login from '/src/components/Login.jsx'
 import Take from '/src/components/Take.jsx'
 import Expanses from '/src/components/Expanses.jsx'
 import Weather from '/src/components/Weather.jsx'
+import { StoreProvider, createStore } from 'easy-peasy'
+import { useStore } from 'easy-peasy'
+import model from '/src/components/model.jsx'
+const store = createStore(model)
 
 const App = () => {
 	return (
 		<>
-			<Router>
-				<Routes>
-					<Route path='/' element={<Login />} />
-					<Route path='/take' element={<Take />} />
-					<Route path='/expanses' element={<Expanses />} />
-					<Route path='/weather' element={<Weather />} />
-				</Routes>
-			</Router>
+			<StoreProvider store={store}>
+				<Router>
+					<Routes>
+						<Route path='/' element={<Login />} />
+						<Route path='/take' element={<Take />} />
+						<Route path='/expanses' element={<Expanses />} />
+						<Route path='/weather' element={<Weather />} />
+					</Routes>
+				</Router>
+			</StoreProvider>
 		</>
 	)
 }

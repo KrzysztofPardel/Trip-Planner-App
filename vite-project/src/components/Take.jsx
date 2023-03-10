@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { Carousel } from 'primereact/carousel'
 import '/src/scss/Take.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,8 +11,23 @@ import { faUtensils } from '@fortawesome/free-solid-svg-icons'
 import { faPills } from '@fortawesome/free-solid-svg-icons'
 import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 import { faGuitar } from '@fortawesome/free-solid-svg-icons'
-
+import { v4 as uuidv4 } from 'uuid'
+//dzięki temu nadajemy potem unikalne id każdemu elementowi z listy
+const object = {
+	id: 1,
+	item: 'Another item to take',
+	done: false,
+}
 export const Take = () => {
+	const [todo, setTodo] = useState([object])
+	const [item, setItem] = useState('')
+	const handleAdd = event => {
+		event.preventDefault()
+		const newToDo = todo.concat({ item, id: uuidv4(), done: true })
+		setTodo(newToDo)
+		setItem('')
+	}
+
 	return (
 		<>
 			<div className='container-take'>
@@ -62,11 +77,40 @@ export const Take = () => {
 					</div>
 				</div>
 				<div className='list-container'>
-					<h2 className='header_take'>Take</h2>
-					<div className='line'></div>
+					<div className='container-take_box'>
+						<div className='container-take_header'>
+							<h2 className='header_take'>Take</h2>
+							<div className='line'></div>
+						</div>
+						<div className='container-take_input'>
+							<input
+								type='text'
+								placeholder='ex. Passport'
+								value={item}
+								onChange={e => setItem(e.target.value)}
+								className='input-add_take'></input>
+							<button onClick={handleAdd} className='btn-add_take'>
+								Add it!
+							</button>
+						</div>
+					</div>
 					{/* //po takich li będzie mapowane */}
 					<ul className='list-to_take'>
-						<li className='element'>
+						{todo.map(element => (
+							<li key={element.id} className='element'>
+								<label className='checkbox-label' />
+								<input className='checkbox-input' type='checkbox' />
+								{element.item}
+								{/* <input className='input-to_take' type='text' /> */}
+								<button className='btn-edit'>
+									<FontAwesomeIcon icon={faFile} />
+								</button>
+								<button className='btn-delete'>
+									<FontAwesomeIcon icon={faX} />
+								</button>
+							</li>
+						))}
+						{/* <li className='element'>
 							<label className='checkbox-label' />
 							<input className='checkbox-input' type='checkbox' />
 							<input className='input-to_take' type='text' />
@@ -76,29 +120,7 @@ export const Take = () => {
 							<button className='btn-delete'>
 								<FontAwesomeIcon icon={faX} />
 							</button>
-						</li>
-						<li className='element'>
-							<label className='checkbox-label' />
-							<input className='checkbox-input' type='checkbox' />
-							<input className='input-to_take' type='text' />
-							<button className='btn-edit'>
-								<FontAwesomeIcon icon={faFile} />
-							</button>
-							<button className='btn-delete'>
-								<FontAwesomeIcon icon={faX} />
-							</button>
-						</li>
-						<li className='element'>
-							<label className='checkbox-label' />
-							<input className='checkbox-input' type='checkbox' />
-							<input className='input-to_take' type='text' />
-							<button className='btn-edit'>
-								<FontAwesomeIcon icon={faFile} />
-							</button>
-							<button className='btn-delete'>
-								<FontAwesomeIcon icon={faX} />
-							</button>
-						</li>
+						</li> */}
 					</ul>
 				</div>
 				<div className='btn-container'>
@@ -109,7 +131,7 @@ export const Take = () => {
 						Expanes
 					</Link>
 				</div>
-				<p className='bottom-text'>So what do you want to take to $trip - destination.value on $trip - date.value?</p>
+				<p className='bottom-text'>So what do you want to take to ............ on $trip - date.value?</p>
 			</div>
 		</>
 	)
