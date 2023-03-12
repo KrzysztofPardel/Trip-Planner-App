@@ -1,0 +1,177 @@
+@import './variables.scss';
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	// overscroll-behavior: none;
+}
+.container-expanses {
+	height: 100vh;
+	padding: 2em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	// gap: 1em;
+	flex-direction: column;
+	background-color: $color-secondary;
+}
+.top-text {
+	text-align: center;
+	font-family: $font-main;
+	font-size: $font-primary-size;
+	border-bottom: 1px solid;
+}
+
+.carousel-container_expanses {
+	width: 90vw;
+	height: 10vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	// border: 1px dashed navy;
+	gap: 3em;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	.housing-container,
+	.transport-container,
+	.eatables-container,
+	.entertainment-container,
+	.souvenirs-container,
+	.health_container,
+	.others-container {
+		width: 5em;
+		height: 5em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		// border: 1px solid navy;
+		padding: 0.5em;
+		height: 4.5em;
+		font-size: $font-icons-size;
+		font-family: $font-secondary;
+		// display: none;
+	}
+	.btn-housing,
+	.btn-transport,
+	.btn-eatables,
+	.btn-entertainment,
+	.btn-souvenirs,
+	.btn-health,
+	.btn-others {
+		border: 1px solid navy;
+		border-radius: 2em;
+		font-size: 2em;
+		background: none;
+		padding: 0.2em;
+		border: 1em;
+		color: $color-primary;
+
+		:active {
+			font-size: 2.1em;
+			color: $color-teritary;
+		}
+	}
+	.span-housing,
+	.span-transport,
+	.span-eatables,
+	.span-entertainment,
+	.span-souvenirs,
+	.span-health,
+	.span-others {
+		font-size: $font-icons-size;
+		font-weight: 400;
+		font-size: $font-primary-size;
+	}
+}
+
+.list-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-bottom: 32em;
+	// border: 1px solid navy;
+	padding: 0.5em;
+	width: 70vw;
+	.header_expanses {
+		font-family: $font-teritary;
+		font-size: $font-teritary-size;
+		color: $color-teritary;
+		margin-bottom: -0.2em;
+	}
+	.line {
+		border-bottom: 2px solid black;
+		width: 10em;
+		// margin-bottom: 2em;
+		// border: 3px solid red;
+	}
+	.list-to_take {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		overflow-y: scroll;
+		border: 2px 0 solid black;
+		max-width: 30em;
+		max-height: 40vh;
+		.element {
+			display: flex;
+			justify-content: space-start;
+			margin: 1em 0;
+			.checkbox-input {
+				margin-right: 1em;
+			}
+			.input-to_expanses {
+				border: none;
+				border-bottom: 1px solid;
+				width: 45vw;
+				font-family: $font-main;
+				font-size: $font-primary-size;
+				// margin: 1em 0;
+				&:focus {
+					background-color: $color-secondary;
+					font-weight: 400;
+					border: 1px solid $color-secondary !important;
+				}
+				@include tablet {
+					width: 55vw;
+					font-size: 1.1em;
+				}
+			}
+			.btn-edit,
+			.btn-delete {
+				margin-left: 1em;
+				font-size: 1.2em;
+				border: none;
+				background: none;
+				// height: 0m;
+			}
+		}
+	}
+}
+.btn-container {
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	margin-top: -30em;
+	margin-bottom: 1.5em;
+	gap: 2.5vw;
+
+	.btn-go_to_take,
+	.btn-go_to_weather {
+		text-decoration: none;
+		font-size: $font-secondary-size;
+		font-family: $font-main;
+		background-color: $color-primary;
+		color: $color-quartenary;
+		width: 6em;
+		padding: 0.5em;
+		border-radius: 5em;
+		text-align: center;
+	}
+}
+.bottom-text {
+	text-align: center;
+	width: 85vw;
+	font-family: $font-main;
+}
