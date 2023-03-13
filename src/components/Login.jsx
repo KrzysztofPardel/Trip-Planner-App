@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '/src/scss/Login.scss'
-import globe from './globe.json'
+// import globe from './globe.json'
 import backpack from './backpack.json'
 import Lottie from 'lottie-react'
 const backpackStyle = {
 	margin: '2em',
 }
-const Login = () => {
+const Login = ({ callback }) => {
 	const [name, setName] = useState('')
 	const [date, setDate] = useState('')
 	const [destination, setDestination] = useState('')
-	// const handleDestination = e => {
-	// 	setDestination(e.target.value)
-	// 	console.log(setDestination)
-	// }
+
 	return (
 		<>
 			<div className='container-login'>
@@ -46,7 +43,7 @@ const Login = () => {
 						onChange={e => setDestination(e.target.value)}
 						placeholder='What is your trip destination?'></input>
 					<div className='button-container'>
-						<Link to='/take' className='btn-lets_go'>
+						<Link to='/take' className='btn-lets_go' onClick={() => callback(setDestination(e.target.value))}>
 							Ok, let's go!
 						</Link>
 					</div>

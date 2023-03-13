@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import '/src/scss/Take.scss'
 import Login from '/src/components/Login.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,14 +12,13 @@ import { faPills } from '@fortawesome/free-solid-svg-icons'
 import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 import { faGuitar } from '@fortawesome/free-solid-svg-icons'
 import { v4 as uuidv4 } from 'uuid'
-
 //dzięki temu nadajemy potem unikalne id każdemu elementowi z listy
 const object = {
 	id: 1,
 	item: 'Another item to take',
 	done: false,
 }
-export const Take = () => {
+export const Take = props => {
 	const [todo, setTodo] = useState([object])
 	const [item, setItem] = useState('')
 	const handleAdd = event => {
@@ -132,7 +131,9 @@ export const Take = () => {
 						Expanes
 					</Link>
 				</div>
-				<p className='bottom-text'>So what do you want to take to __________ on $trip - date.value?</p>
+				<p className='bottom-text'>
+					So what do you want to take to <b>{props.destination}</b> on ......date.......?
+				</p>
 			</div>
 		</>
 	)
