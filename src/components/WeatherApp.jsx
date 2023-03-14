@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import '/src/scss/WeatherApp.scss'
 
@@ -66,6 +67,17 @@ const WeatherApp = () => {
 							</div>
 						</div>
 					)}
+				</div>
+				<div className='btn-container_bottom'>
+					<Link to='/' className='btn-go_to_login'>
+						Login
+					</Link>
+					<Link to='/expanses' className='btn-go_to_expanses'>
+						Expanses
+					</Link>
+					<Link to='/take' className='btn-go_to_take'>
+						Take
+					</Link>
 				</div>
 			</div>
 		</>

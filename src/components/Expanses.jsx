@@ -127,7 +127,7 @@ export const Expanses = () => {
 					<Link to='/take' className='btn-go_to_take'>
 						Take
 					</Link>
-					<Link to='/weather' className='btn-go_to_weather'>
+					<Link to='/weatherapp' className='btn-go_to_weather'>
 						Weather
 					</Link>
 				</div>
